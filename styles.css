@@ -302,6 +302,17 @@ section {
     letter-spacing: 1px;
 }
 
+.brand-logo {
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-brand .brand-logo {
+    max-height: 60px;
+    margin-bottom: 15px;
+}
+
 .nav-links {
     display: flex;
     gap: 30px;
@@ -1142,12 +1153,27 @@ section {
 }
 
 @media (max-width: 768px) {
+    .hero-content {
+        margin-top: 5vh;
+        z-index: 10;
+        position: relative;
+    }
+
     .hero-content h1 {
         font-size: 2.2rem;
+        margin-top: 80px;
+        /* Push heading down to reveal background GENUS sign */
     }
 
     .hero-stats {
         gap: 20px;
         flex-direction: column;
+    }
+
+    .hero-bg-container {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-color: #05142b;
     }
 }
