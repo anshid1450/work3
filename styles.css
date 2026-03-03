@@ -33,7 +33,7 @@ body {
     background: var(--gradient-light);
     line-height: 1.6;
     overflow-x: hidden;
-    cursor: none;
+    cursor: auto;
     /* custom cursor will be visible */
 }
 
