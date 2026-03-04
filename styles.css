@@ -1177,3 +1177,51 @@ section {
         background-color: #05142b;
     }
 }
+
+/* Marquee Animation for Group of Companies */
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+}
+
+.marquee-content {
+    display: inline-flex;
+    gap: 30px;
+    animation: scrollMarquee 30s linear infinite;
+    will-change: transform;
+}
+
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 15px));
+    }
+}
+
+.marquee-image {
+    height: 120px;
+    object-fit: contain;
+    max-width: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    background: rgba(255, 255, 255, 0.5);
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .marquee-image {
+        height: 80px;
+    }
+}

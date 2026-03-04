@@ -349,4 +349,43 @@ document.addEventListener('DOMContentLoaded', () => {
             typeWriter();
         }, 1200); // Wait for the GSAP fade up delay
     }
+
+    // 10. Group of Companies Animations
+    const groupSection = document.getElementById('group-companies');
+    if (groupSection) {
+        // Image reveal animation
+        gsap.to('.reveal-image', {
+            y: 0,
+            opacity: 1,
+            duration: 1.2,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: groupSection,
+                start: 'top 75%'
+            }
+        });
+
+        // Typing text (showing one by one)
+        const groupText = "Uniting diverse expertise to deliver comprehensive industrial excellence.";
+        const typeGroupElem = document.getElementById('typewriter-group');
+        let indexGroup = 0;
+
+        if (typeGroupElem) {
+            ScrollTrigger.create({
+                trigger: groupSection,
+                start: 'top 75%',
+                once: true,
+                onEnter: () => {
+                    function typeGroup() {
+                        if (indexGroup < groupText.length) {
+                            typeGroupElem.innerHTML += groupText.charAt(indexGroup);
+                            indexGroup++;
+                            setTimeout(typeGroup, 40); // typing speed
+                        }
+                    }
+                    setTimeout(typeGroup, 400); // Start typing shortly after trigger
+                }
+            });
+        }
+    }
 });
