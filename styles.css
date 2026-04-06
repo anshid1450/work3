@@ -1217,7 +1217,7 @@ section {
     }
 }
 
-/* Glowing Animation for Group of Companies */
+/* Glowing Animation for Group of Companies & Major Clients (Static Version) */
 .glowing-box-container {
     width: 100%;
     padding: 0;
@@ -1243,7 +1243,7 @@ section {
     background: linear-gradient(45deg, #073b82, #00f2fe, #2b70f0, #4facfe, #073b82);
     background-size: 300% 300%;
     animation: glowingEdges 4s ease infinite;
-    box-shadow: 0 0 20px rgba(43, 112, 240, 0.4), 0 0 40px rgba(0, 242, 254, 0.2);
+    box-shadow: 0 10px 20px rgba(43, 112, 240, 0.4), 0 0 40px rgba(0, 242, 254, 0.2);
 }
 
 @keyframes glowingEdges {

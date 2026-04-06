@@ -388,4 +388,30 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    // 11. Major Clients Typewriter
+    const clientSection = document.getElementById('clients');
+    if (clientSection) {
+        const clientText = "Partnering with global leaders to deliver unparalleled industrial solutions.";
+        const typeClientElem = document.getElementById('typewriter-clients');
+        let indexClient = 0;
+
+        if (typeClientElem) {
+            ScrollTrigger.create({
+                trigger: clientSection,
+                start: 'top 75%',
+                once: true,
+                onEnter: () => {
+                    function typeClient() {
+                        if (indexClient < clientText.length) {
+                            typeClientElem.innerHTML += clientText.charAt(indexClient);
+                            indexClient++;
+                            setTimeout(typeClient, 40);
+                        }
+                    }
+                    setTimeout(typeClient, 400);
+                }
+            });
+        }
+    }
 });
